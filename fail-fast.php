@@ -1,6 +1,6 @@
 <?php
 
-function cadastrarUsuario($nome, $email, $senha): void {
+function cadastrarUsuario(string $nome, string $email, string $senha): void {
     if (!empty($nome)) {
         if (!empty($email)) {
             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -29,7 +29,7 @@ function cadastrarUsuario($nome, $email, $senha): void {
     }
 }
 
-function cadastrar($email): void {
+function cadastrar(string $email): void {
     if (!empty($email)) {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo "Usuário cadastrado";
@@ -42,7 +42,7 @@ function cadastrar($email): void {
 }
 
 
-function processarPedido($usuario, $produto, $estoque, $saldo) {
+function processarPedido(string $usuario, string $produto, array $estoque, int $saldo) {
     if ($usuario != null) {
         if ($produto != null) {
             if (isset($estoque[$produto])) {
